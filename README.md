@@ -8,7 +8,7 @@ Research overview accompanying the GraphSE-Learn manuscript.
 
 GraphSE-Learn connects software engineering concepts to their source evidence, uses specialized agents to generate tutoring and assessment content, and assigns workflow control, grading, and mastery updates to deterministic components. The manuscript studies technical reliability; student learning outcomes remain a separate empirical question.
 
-The study uses SWEBOK v4 knowledge from **Software Design, Software Construction, and Software Testing**. This repository presents the architecture and selected figures from the research manuscript. The implementation used in the study and the SWEBOK source corpus are not distributed here.
+The study uses SWEBOK v4 knowledge from **Software Design, Software Construction, and Software Testing**. This repository presents the architecture and selected figures from the research manuscript. A single self-contained offline example illustrates three deterministic mechanisms with synthetic data. The implementation used in the study and the SWEBOK source corpus are not distributed here.
 
 ## Architecture
 
@@ -73,8 +73,21 @@ The study distinguishes structural reliability from semantic grounding and techn
 
 - `README.md`: research overview, authors, and architecture.
 - `docs/figures/`: four manuscript figure previews.
+- `example.py`: one standalone synthetic example of provenance checks, answer-key grading, and standard BKT.
 
 Figures 1, 3, 5, and 6 are taken from the authors' manuscript and retain its original numbering. They describe the complete research system and evaluation.
+
+## Running the shared components
+
+Python 3.10 or later; no dependencies, API keys, or network access required.
+
+```bash
+python example.py
+```
+
+The example checks a synthetic source ID, page range, and verbatim span; grades a static answer against a stored key; and updates mastery using standard BKT. A correct answer moves the pilot prior from `0.30` to approximately `0.760976`; an unsure response leaves mastery unchanged. Mastery is declared at `0.95`.
+
+This is an educational illustration of three mechanisms, not a GraphRAG implementation or a reproduction of the study. It contains no tutoring prompts, model integrations, graph database, learner records, research datasets, deployment configuration, or experiment outputs.
 
 ## License
 
