@@ -60,7 +60,7 @@ def update_mastery(prior: float, outcome: bool | None) -> float:
 
 
 def main() -> None:
-    # Author-written synthetic text, not a passage from SWEBOK.
+    # Author-written synthetic text, not a passage from the research source corpus.
     source = {
         "chunk_id": "synthetic-1", "page_start": 1, "page_end": 1,
         "text": "A focused module groups responsibilities that belong together.",
